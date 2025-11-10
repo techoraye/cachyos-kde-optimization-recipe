@@ -1,4 +1,4 @@
-# ✅ Arch KDE Optimization Recipe
+# ✅ cachyos KDE Optimization Recipe
 
 A complete interactive optimization script for **KDE Plasma on Arch-based systems**.  
 Supports Arch Linux, EndeavourOS, CachyOS, Garuda, and other Arch derivatives.
@@ -38,7 +38,7 @@ You choose exactly what you want: KDE setup, Chaotic-AUR, GPU drivers, gaming st
 ## 🚀 Installation & Usage
 
 ```bash
-git clone https://github.com/techoraye/arch-kde-optimization-recipe.git
-cd arch-kde-optimization-recipe
+git clone https://github.com/techoraye/cachyos-kde-optimization-recipe.git
+cd cachyos-kde-optimization-recipe
 chmod +x Recipe.sh
 ./Recipe.sh
