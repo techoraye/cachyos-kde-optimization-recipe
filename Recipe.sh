@@ -145,11 +145,11 @@ install_drivers_menu() {
       case $g in
         nvidia)
           dialog --msgbox "Detected NVIDIA. Installing proprietary driver." 6 50
-          pacman_install nvidia nvidia-utils nvidia-settings || warn "nvidia install failed"
+          pacman_install linux-cachyos-lts-nvidia-open opencl-nvidia nvidia-utils nvidia-settings || warn "nvidia install failed"
           ;;
         amd)
           dialog --msgbox "Detected AMD. Installing mesa + vulkan-radeon." 6 50
-          pacman_install mesa vulkan-radeon radeontop || warn "amd driver install failed"
+          pacman_install mesa vulkan-radeon radeontop amdgpu_top || warn "amd driver install failed"
           ;;
         intel)
           dialog --msgbox "Detected Intel. Installing mesa + vulkan-intel." 6 50
@@ -161,9 +161,9 @@ install_drivers_menu() {
           ;;
       esac
       ;;
-    2) pacman_install nvidia nvidia-utils nvidia-settings || warn "nvidia install failed" ;;
+    2) pacman_install linux-cachyos-lts-nvidia-open opencl-nvidia nvidia-utils nvidia-settings || warn "nvidia install failed" ;;
     3) pacman_install xf86-video-nouveau mesa || warn "nouveau install failed" ;;
-    4) pacman_install mesa vulkan-radeon radeontop || warn "amd install failed" ;;
+    4) pacman_install mesa vulkan-radeon radeontop amdgpu_top || warn "amd install failed" ;;
     5) pacman_install mesa vulkan-intel intel-media-driver || warn "intel install failed" ;;
     6) return ;;
   esac
