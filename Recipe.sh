@@ -127,7 +127,7 @@ install_audio_jack2() {
 
 # KDE install
 install_kde() {
-  pacman_install plasma-meta kde-utilities-meta kde-system-meta flatpak flatpak-kcm flatpak-xdg-utils gwenview adwaita-fonts materia-gtk-theme cachy-update libappindicator-gtk3 system-monitoring-center || warn "KDE install issues"
+  pacman_install plasma-meta kde-utilities-meta kde-system-meta flatpak flatpak-kcm flatpak-xdg-utils gwenview adwaita-fonts materia-gtk-theme cachy-update libappindicator-gtk3 system-monitoring-center brave-bin qastools || warn "KDE install issues"
 }
 
 # Drivers menu actions
@@ -184,10 +184,6 @@ install_gaming_stack() {
 
 # Performance tweaks
 performance_tweaks() {
-  # zram via zramswap or zram-generator? We'll install zramswap (simple)
-  pacman_install zramswap || warn "zramswap not available"
-  sudo systemctl enable --now zramswap.service || warn "failed to enable zramswap"
-
   # cpupower
   pacman_install cpupower || warn "cpupower install issue"
   echo "GOVERNOR='performance'" | sudo tee /etc/default/cpupower >/dev/null
